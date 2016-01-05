@@ -301,22 +301,22 @@ H2 {
 Les mixins reste la meilleure avancée en terme d'innovation et vous permet de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
 
 Fichier SASS
-```css
-@mixin transition($tr 0.4s)
-    -webkit-transition: all $tr ease
-    -moz-transition: all $tr ease
-    -o-transition: all $tr ease
-    transition: all $tr ease
+```
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius
+    -moz-borsder-radius: all $radius
+    -ms-border-radius: all $radius
+
+.box { @include border-radius(10px); }
 ```
 
 Fichier CSS
-```css
-@import mixins
-@import var
-@import fonts
 
-a
-    @include text($blacktxt, 13px)
-    background: $blue
-    @include: transition
+```css
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
 ```
