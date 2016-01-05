@@ -272,4 +272,22 @@ Les outils BEM peuvent faire:
 
 #### SASS (syntactically awesome style sheets)
 ---
-Syntaxe appellée SCSS.
+Sass est un langage de génération dynamique de feuille de style CSS.
+C'est un outil qui permet de stocker n'importe quelles informations (couleur, taille, texte, etc.) dans un objet que l'on nomme $MonObjet.
+Exemple : 
+```css
+$bleu : #123DD3
+$vert_fluo : #6654RF4
+$jaune_pipi : #999878
+```
+On peut ensuite réutiliser ces variables stickées dans notre fichier SASS dans notre fichier CSS : 
+```
+H1 {
+    color : $bleu
+}
+
+H2 {
+    color : $jaune_pipi
+}
+
+    
