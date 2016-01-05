@@ -1,4 +1,5 @@
 # SMACSS (Scalable and Modular Architecture for CSS)
+
 #### **Une méthodologie pour organiser son CSS**
 
 #### Le coeur de SMACSS est la categorisation. Il y a 5 types de categories:
@@ -272,6 +273,11 @@ Les outils BEM peuvent faire:
 
 #### SASS (syntactically awesome style sheets)
 ---
+### Présentaton de SASS
+
+Sass est une extension de CSS3, ajoutant de nouvelles règles .Les grandes nouveautés sont : les variables, les mixins, l'héritage de sélection et différents options très utiles.
+ 
+ 
 Sass est un langage de génération dynamique de feuille de style CSS.
 C'est un outil qui permet de stocker n'importe quelles informations (couleur, taille, texte, etc.) dans un objet que l'on nomme $MonObjet.
 Exemple : 
