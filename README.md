@@ -286,7 +286,7 @@ $bleu : #123DD3
 $vert_fluo : #6654RF4
 $jaune_pipi : #999878
 ```
-On peut ensuite réutiliser ces variables stickées dans notre fichier SASS dans notre fichier CSS : 
+On peut ensuite réutiliser ces variables stockées dans notre fichier SASS dans notre fichier CSS : 
 ```
 H1 {
     color : $bleu
@@ -297,6 +297,26 @@ H2 {
 }
 ```
 ##### Les mixins
-##### L'héritage
-##### L'imbrication
-##### Les includes
+
+Les mixins reste la meilleure avancée en terme d'innovation et vous permet de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
+
+Fichier SASS
+```css
+@mixin transition($tr 0.4s)
+    -webkit-transition: all $tr ease
+    -moz-transition: all $tr ease
+    -o-transition: all $tr ease
+    transition: all $tr ease
+```
+
+Fichier CSS
+```css
+@import mixins
+@import var
+@import fonts
+
+a
+    @include text($blacktxt, 13px)
+    background: $blue
+    @include: transition
+```
