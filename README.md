@@ -273,13 +273,13 @@ Les outils BEM peuvent faire:
 
 #### SASS (syntactically awesome style sheets)
 ---
-### Présentaton de SASS
-
-Sass est une extension de CSS3, ajoutant de nouvelles règles .Les grandes nouveautés sont : les variables, les mixins, l'héritage de sélection et différents options très utiles.
+##### Présentaton de SASS
+---
+Sass est un langage de génération dynamique de feuille de style CSS. Il permet d'utiliser des fonctionnalités telles que : les variables, les mixins, l'héritage de sélection et différents options très utiles.
  
- 
-Sass est un langage de génération dynamique de feuille de style CSS.
-C'est un outil qui permet de stocker n'importe quelles informations (couleur, taille, texte, etc.) dans un objet que l'on nomme $MonObjet.
+##### Les variables
+---
+Une variable permet de stocker n'importe quelles informations (couleur, taille, texte, etc.) dans un objet que l'on nomme $MonObjet.
 Exemple : 
 ```css
 $bleu : #123DD3
@@ -295,5 +295,8 @@ H1 {
 H2 {
     color : $jaune_pipi
 }
-
-    
+```
+##### Les mixins
+##### L'héritage
+##### L'imbrication
+##### Les includes
