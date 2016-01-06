@@ -9,12 +9,13 @@
 3. Module
 4. Etat
 5. Theme
+6. Sources et liens utiles 
 
 #### 1- Base :
 ----
 Concerne les éléments de base html comme body ou h1 etc.
 Pour ces formes, il peut être utile d'utiliser des styles récurrents.
-Eviter le plus les CSS resets (des styles qui en annulent d'autres) ou savoir les utiliser à bon escient.
+Eviter le plus possible les CSS resets (des styles qui en annulent d'autres) ou savoir les utiliser à bon escient.
 
 ```css
 body, form {
@@ -54,6 +55,7 @@ a:hover {
 }
 ```
 Lorsque l'on veut généraliser une classe, on n'utilise pas les ID mais on cible classe et élément pour pouvoir réutiliser le style et réduire de même la longueur du code CSS en évitant de le dupliquer
+
 
 #### 3. Module
 ---
@@ -99,6 +101,7 @@ Exemple:
     color: #A66105;}
 ```
 
+```
 
 # Aspects de SMACCS
 ----
@@ -222,7 +225,8 @@ utiliser les classes pour les sélecteurs le plus à droite
 #### BEM : Block, Element, Modifier
 ----
 ##### Definition : 
-Façon de nommer les classes en CSS 
+Façon de nommer les classes en CSS   
+La méthodolgie de BEM permet d'accélerer le processus de développement et de facilter le travail en équipe.
 
 ##### Block:
 conteneur , ce qui englobe le tout il représente le niveau supérieur d'une abstraction ou d'un composant 
@@ -296,9 +300,16 @@ H2 {
     color : $jaune_pipi
 }
 ```
+Installation de SASS :
+    1 : Créer un fichier "gulpfile.js" a l’intérieur du dossier de votre site et y copier le contenu du fichier qui est sur "https://gist.github.com/elgamine-dev/2fc42f3bb1770265cd06"
+    2 : Suivre les instructions sur ce même GITHUB en dessous du fichier.
+    3 : Creer un dossier scss, c'est dans ce fichier que vous allez écrire votre code css avec "$nomvariable : paramètre;"
+    4 : Lancer votre site avec " gulp serv"
+    [Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p]
+    ```
 ##### Les mixins
 
-Les mixins reste la meilleure avancée en terme d'innovation et vous permet de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
+Les mixins restent la meilleure avancée en terme d'innovation et vous permettent de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
 
 Fichier SASS
 ```
@@ -320,3 +331,17 @@ Fichier CSS
   border-radius: 10px;
 }
 ```
+
+
+#### Sources et Liens utiles :
+    
+    SASS:
+    Site officiel: http://sass-lang.com/
+    Tutoriel français : https://la-cascade.io/se-lancer-dans-sass/
+    Autre tuto en français : http://blog.humancoders.com/pourquoi-sass-et-compass-49/
+    
+    BEM:
+    Site oficiel: https://en.bem.info/
+        
+    SMACSS:
+    Site officiel:  https://smacss.com/
