@@ -425,6 +425,64 @@ gulp serve
 ```
 -Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p
 
+#Alternative Gulp
+----------
+
+###Présentation Grunt
+
+
+Vous est-il déjà arrivé de devoir régulièrement lancer, lancer et relancer des processus tels que Sass, LESS, uglify - en somme des préprocesseurs ou des minifiers - régulièrement à la main ? N’est-ce pas pénible ? N’est-ce pas aussi pénible de devoir indiquer à tous ses collègues comment ils doivent bosser pour que vous soyez tous cohérents ? Oui ? Grunt permet de résoudre ce genre de choses : respecter un putain de workflow en s’assurant que le parcours soit le même pour tout le monde et d’exécuter tout ça en lançant une seule commande. N’est-ce pas fucking aweeeeesome dude ? Bref.
+
+**Voici un workflow assez classique :**
+
+- Compiler mes .scss en .css;
+- Concaténer mes *.js en un seul fichier;
+- Minifier (avec uglify par exemple) la résultante de l’action précédente.
+
+-----
+
+##Installation
+
+Tout d’abord, installons Grunt. Notez que Grunt est en nodejs et que je considère que vous avez déjà nodejs d’installé. D’autre part, nous allons créer un nouveau projet npm afin d’enregistrer tous les packages que vous allez installer. Je vous explique par la suite pourquoi nous faisons ça.
+
+```
+npm init // tapez plusieurs fois entrée
+```
+En premier lieu, il faut installer le package qui permet de gérer Grunt en ligne de commande. C’est le commander de Grunt en gros.
+
+```
+npm install -g grunt-cli
+```
+
+Une fois cela fait, installez Grunt en local dans votre projet.
+
+```
+npm install grunt --save-dev
+```
+
+#Initialisation
+
+Maintenant, il est nécessaire de créer un fichier de configuration Grunt. Pour cela, nous allons créer un fichier nommé Gruntfile.js à la racine de votre projet.
+
+```
+touch Gruntfile.js
+```
+Fait ? Voici maintenant à quoi doit ressembler la base d’une configuration Grunt.
+
+```
+module.exports = function(grunt) {
+
+  // Configuration de Grunt
+  grunt.initConfig({})
+
+  // Définition des tâches Grunt
+  grunt.registerTask('default', '')
+
+}
+```
+
+Nous avons maintenant tout le nécessaire pour débuter notre projet. Nous allons enfin pouvoir attaquer les choses sérieuses.
+
 ##### Les mixins
 
 Les mixins restent la meilleure avancée en terme d'innovation et vous permettent de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
