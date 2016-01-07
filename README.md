@@ -101,12 +101,11 @@ Exemple:
     color: #A66105;}
 ```
 
-```
-
 # Aspects de SMACCS
 ----
 ## Profondeur d'application
 Dans un style commun tel que :
+
 ```css
 #sidebar div {
     border: 1px solid #333;
@@ -139,7 +138,9 @@ Sur un code comme celui-ci :
 ```
 
 On peut diminuer la profondeur de champ en partant de la div à laquelle on va ajouter une classe css (.pod):
-```.pod {
+
+```
+.pod {
     border: 1px solid #333;
 }
 
@@ -152,7 +153,9 @@ On peut diminuer la profondeur de champ en partant de la div à laquelle on va a
 } 
 ```
 L'avantage de ce style est de pouvoir être réutilisable dans d'autre cas comme les templates mustache par exemple :
-```html
+
+```
+html
 <div class="pod">
     <h3>{{heading}}</h3>
     <ul>
@@ -166,19 +169,25 @@ L'avantage de ce style est de pouvoir être réutilisable dans d'autre cas comme
 Il faut essayer de trouver un équilibre entre maintenance, performance et lisibilité. Le principe est de ne pas appliquer de classes inutiles et de les utiliser à des endroits pertinents. Afin de rendre le code plus ouvert et flexible.
 
 On peut aussi dupliquer les règles :
+
 ```css
 .pod > ul, .pod > ol, .pod > div {
     margin-bottom: 5px; 
 } 
 ```
+
 Ou simplifier en classifiant pour réutiliser le style par exemple :
+
 ```css
 .pod-body {
     margin-bottom: 5px; 
 }
 ```
-À l'intérieur de ce template
-```html
+
+À l'intérieur de ce template:
+
+```
+html
 <div class="pod">
     <h3>{{heading}}</h3>
     <ul class="pod-body">
@@ -188,10 +197,13 @@ Ou simplifier en classifiant pour réutiliser le style par exemple :
     </ul>
 </div> 
 ```
+
 ## Performance des sélecteurs
 ---
 Pour optimiser la performance de rendu de la page, il faut comprendre la façon dont est lu le code par le navigateur, le HTML est évalué comme un flux de données, et chaque élément peut commencer à être traîté alors que le serveur n'a pas encore envoyé tout le document. Exemple :
-```html
+
+```
+html
 <body>
    <div id="content">
       <div class="module intro">
@@ -208,6 +220,7 @@ Pour optimiser la performance de rendu de la page, il faut comprendre la façon 
 Lorsque le navigateur arrive sur la première ligne ```<body>```, rien d'autre n'existe pour lui et il va aller chercher le style CSS qui lui correspond, puis il descend sur la ligne ```<div id="content">``` et fait pareil, il va chercher le CSS qui correspond. Et ceci jusqu'à la fin du document.
 
 Le CSS est lu de droite à gauche par exemple :
+
 ```css
 body div#content p { color: #003366; }
 ```
@@ -247,6 +260,7 @@ EX: ```.block--modifieur {}```
 
 
 Exemple:
+
     ```
     .personne {},
     .personne--femme {},
@@ -263,8 +277,10 @@ Partant du postulat qu'il s'agit d'une femme. Nous ajoutons ensuite l'element ma
 Les blocks et les éléments doivent avoir un nom unique, qui sera utilisé comme class CSS.
 
 Les sélecteurs CSS ne doivent pas utiliser les noms des éléments HTML.
+
 ##### 1. Méthodologie BEM
 Il permet de faciliter le travail du développement en équipe.
+
 ##### 2. Outils BEM
 Les outils BEM peuvent faire:
 * créer des entités
@@ -283,12 +299,14 @@ Sass est un langage de génération dynamique de feuille de style CSS. Il permet
 ---
 Une variable permet de stocker n'importe quelles informations (couleur, taille, texte, etc.) dans un objet que l'on nomme $MonObjet.
 Exemple : 
+
 ```css
 $bleu : #123DD3
 $vert_fluo : #6654RF4
 $jaune_pipi : #999878
 ```
 On peut ensuite réutiliser ces variables stockées dans notre fichier SASS dans notre fichier CSS : 
+
 ```
 H1 {
     color : $bleu
@@ -307,7 +325,6 @@ Installation de SASS :
     
     4 : Lancer votre site avec " gulp serv"
     [Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p]
-    ```
 
 ##### Les mixins
 
@@ -325,7 +342,8 @@ Fichier SASS
 
 Fichier CSS
 
-```css
+```
+css
 .box {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
