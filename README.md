@@ -316,21 +316,42 @@ H2 {
     color : $jaune_pipi
 }
 ```
-Installation de SASS :
-    1 : Créer un fichier "gulpfile.js" a l’intérieur du dossier de votre site et y copier le contenu du fichier qui est sur "https://gist.github.com/elgamine-dev/2fc42f3bb1770265cd06"
-    
-    2 : Suivre les instructions sur ce même GITHUB en dessous du fichier.
-    
-    3 : Creer un dossier scss, c'est dans ce fichier que vous allez écrire votre code css avec "$nomvariable : paramètre;"
-    
-    4 : Lancer votre site avec " gulp serv"
-    [Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p]
+
+#Sass
+###Présentation & installation
+
+Installation de Sass selon l'os.
+
+**Sur Mac OSX :**
+```
+sudo gem install sass
+```
+
+On utilise "sudo" car l'installation d'une gem effectue une modification sur le système, il faut donc prouver a l'ordinateur que l'on est administrateur.
+
+**Sur linux & Windows :**
+
+- Crée un fichier gulpfile.js a la racine de votre projet.
+- A l'intèrieur du fichier coller y ce contenue https://gist.github.com/elgamine-dev/2fc42f3bb1770265cd06
+
+- il faut ouvrir un terminal et tapez y c'es commande :
+```
+sudo npm install --g gulp browser-sync
+npm install --save-dev gulp-sass
+```
+
+Et pour finir :
+```
+gulp serve
+```
+-Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p
 
 ##### Les mixins
 
 Les mixins restent la meilleure avancée en terme d'innovation et vous permettent de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
 
 Fichier SASS
+
 ```
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius
