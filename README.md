@@ -324,7 +324,13 @@ Je vais faire court. Pour faire simple, son point fort réside dans le fait qu�
 
 ![Alt text] (http://jaysoo.ca/images/grunt-flow-2.png)
 
+![Alt text] (http://blog.xebia.fr/wp-content/uploads/2014/02/js.png)
+
+Et du coup au lieu d’avoir un fichier de conf d’une soixantaine de lignes, on arrive à avoir quelque chose de concis (une vingtaine de ligne seulement).
+
 ![Alt text] (http://jaysoo.ca/images/gulp-flow.png)
+
+![Alt text] (http://blog.xebia.fr/wp-content/uploads/2014/02/js2.png)
 
 ####Expliquation du code d'insertion:
 
