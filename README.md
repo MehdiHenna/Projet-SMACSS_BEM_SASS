@@ -33,6 +33,16 @@ a:hover {
 ```
 #### 2- Mise en page
 ---
+```
+@import 'modules_scss/accueil_body';
+@import 'modules_scss/accueil_accueil';
+@import 'modules_scss/accueil_contenu_de_la_page';
+@import 'modules_scss/accueil_bandeau_partenaires';
+@import 'modules_scss/accueil_footer';
+@import 'modules_scss/accueil_menu';
+@import 'modules_scss/accueil_slider';
+```
+
 * Concerne des éléments de type ID.
 
 * On définit en priorité la position des éléments.
