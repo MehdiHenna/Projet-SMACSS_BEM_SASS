@@ -261,7 +261,8 @@ EX: ```.block--modifieur {}```
 
 Exemple:
 
-    ```.personne {},
+    ```
+    .personne {},
     .personne--femme {},
     .personne__main {},
     .personne__main--gauche {},
