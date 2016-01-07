@@ -138,10 +138,8 @@ Sur un code comme celui-ci :
 }
 ```
 
-On peut diminuer la profondeur de champ en partant de la div à laquelle on va ajouter une classe 
-```css
-(.pod):
-.pod {
+On peut diminuer la profondeur de champ en partant de la div à laquelle on va ajouter une classe css (.pod):
+```.pod {
     border: 1px solid #333;
 }
 
@@ -302,11 +300,15 @@ H2 {
 ```
 Installation de SASS :
     1 : Créer un fichier "gulpfile.js" a l’intérieur du dossier de votre site et y copier le contenu du fichier qui est sur "https://gist.github.com/elgamine-dev/2fc42f3bb1770265cd06"
+    
     2 : Suivre les instructions sur ce même GITHUB en dessous du fichier.
+    
     3 : Creer un dossier scss, c'est dans ce fichier que vous allez écrire votre code css avec "$nomvariable : paramètre;"
+    
     4 : Lancer votre site avec " gulp serv"
     [Pour avoir la coloration syntaxique sur sublimeText installer SASS via Package controle : ctrl + alt + p]
     ```
+
 ##### Les mixins
 
 Les mixins restent la meilleure avancée en terme d'innovation et vous permettent de rendre votre travail encore plus efficace et plus rapide. Les mixins vont vous permettre de réutiliser des pans entiers de CSS, propriétés ou des sélecteurs. Vous pouvez même leur donner des arguments afin de créer des mises en forme complexes en utilisant seulement une seule ligne de code !
