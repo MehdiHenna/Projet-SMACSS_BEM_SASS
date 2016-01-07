@@ -318,6 +318,79 @@ H2 {
 ```
 
 #Sass
+
+###Pourquoi Gulp
+Je vais faire court. Pour faire simple, son point fort réside dans le fait qu’il utilise des streams (tl;dr: un flux de données - en mémoire) et qu’il limite au maximum l’utilisation de fichiers.
+
+![Alt text] (http://jaysoo.ca/images/grunt-flow-2.png)
+
+![Alt text] (http://jaysoo.ca/images/gulp-flow.png)
+
+####Expliquation du code d'insertion:
+
+```
+// bah là ok, on est obligé d'y passer pour avoir l'API Gulp
+var gulp = require("gulp")
+
+  // Ça c'est optionnel, c'est pour avoir (entre autres la méthode noop())
+  // je reviens dessus après
+  // https://github.com/gulpjs/gulp-util
+var gutil = require("gulp-util")
+
+  // Là on a Mario le plombier qui fixe la tuyauterie foireuse.
+  // Ce plugin patch le problème de stream avec node.js qui fait que tout le process
+  // explose à la moindre erreur (pas pratique en cas de watch par exemple)
+  // en gros, il remplace la méthode pipe et attrape les erreurs pour les ressortir gentiment
+  // https://gist.github.com/floatdrop/8269868
+var plumber = require("gulp-plumber")
+
+  // Ici, rien de magique, du plugin en veux-tu en voilà
+var cssnext = require("gulp-cssnext")
+var csso = require("gulp-csso")
+
+  // ici on chope les options de la ligne de commande
+  // exemple: pour avoir options.production à true,
+  // il suffit de faire `gulp --production`
+var options = require("minimist")(process.argv.slice(2))
+
+// Définition d'une tâche, un nom et une fonction.
+// Ce qui est pratique c'est le fait de pouvoir mettre ce qu'on veut
+// y compris un console.log() ^^
+// un autre paramètre peut être ajouté avant la fonction, qui permet de préciser
+// les dépendances (cf task dev plus bas par exemple)
+gulp.task("styles", function() {
+
+  // Ici on attrape les fichiers (glob classique)
+  // à la racine (on va considérer que nos fichiers finaux ne seront pas dans
+  // des sous dossiers, réservés aux partials & co)
+  gulp.src("./src/css/*.css")
+
+    // On utilise plumber que si on build en dev, sinon faut que ça pête, qu'on
+    // soit prévenu lors d'un build pour la prod
+    .pipe(!options.production ? plumber() : gutil.noop())
+
+    // Et là on pipe nos plugins
+    // toujours en jouant avec les options si besoin
+    .pipe(cssnext({
+      compress: options.production,
+      sourcemap: !options.production
+    }))
+
+    // Super important, on convertit nos streams en fichiers
+    .pipe(gulp.dest("./dist/css/"))
+})
+
+// Ici on a une tâche de dev qui lance un watch APRES avoir exécuté `styles` une fois
+gulp.task("default", ["styles"], function() {
+
+  // gulp.watch est natif (pas comme avec grunt)
+  // vous noterez qu'ici par exemple on va surveiller tous les fichiers
+  // et non pas ceux juste à la racine par exemple
+  gulp.watch("./src/css/**/*", ["styles"])
+})
+
+// Comme grunt, `gulp` sans argument lancera la tâche `default`.
+```
 ###Présentation & installation
 
 Installation de Sass selon l'os.
